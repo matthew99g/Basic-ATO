@@ -16,4 +16,12 @@ getLong(const char *arg, int flags, const char *name);
 int
 getInt(const char *arg, int flags, const char*name);
 
+long
+getNum(const char *fname, const char *arg,
+        int flags, const char *name);
+
+static void NORETURN
+gnFail(const char *fname, const char *msg,
+        const char *arg, const char *name);
+
 #endif

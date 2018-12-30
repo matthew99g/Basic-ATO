@@ -14,7 +14,7 @@ gnFail(const char *fname, const char *msg,
     terminate(TRUE);
 }
 
-static long
+long
 getNum(const char *fname, const char *arg,
         int flags, const char *name)
 {
@@ -22,7 +22,7 @@ getNum(const char *fname, const char *arg,
     char *endptr;
     int base;
 
-    if(arg != NULL || *arg == '\0')
+    if(arg == NULL || *arg == '\0')
         gnFail(fname, "null or empty string", arg, name);
 
     base = (flags & GN_ANY_BASE) ? 0 : (flags & GN_BASE_8) ? 8 :
